@@ -1,10 +1,10 @@
-Question 6.2.5
+*Question 6.2.5*
 
 1. The provided code snippet is a swap mechanism typically used in sorting algorithms (like Bubble Sort).
 
 2. In Selection Sort, the goal is to find the smallest element in the unsorted part of the array and move it to the front.
 
-int minIndex = i; // Assume the first element of the unsorted part is the minimum
+int minIndex = i;
 for (int j = i + 1; j < n; j++) {
     if (data[j] < data[minIndex]) {
         minIndex = j; // Update minIndex if a smaller value is found
@@ -18,3 +18,70 @@ for (int j = i + 1; j < n; j++) {
 
     2. data[j] > key (Comparison): This determines if the current element is larger than the "key" being inserted. 
     If it is, the loop continues so that the larger element can be shifted to the right, making space for the key to eventually be placed in its correct sorted position.
+
+4. In the context of Insertion Sort, this specific line is responsible for shifting.
+
+    1. Function: It copies the value of the element at index j to the position directly to its right (j + 1).
+
+    2. Why it's done: Because the algorithm has found that data[j] is larger than the key, it moves data[j] one spot to the right to create a "vacancy" or gap. This process repeats until the correct spot for the key is found.
+
+*Question 6.3.4*
+
+1.
+    A. The outer loop controls the number of "passes" through the array. In a collection of n elements, after n-1 elements are correctly positioned, the last remaining element is guaranteed to be in the correct spot by default.
+    Using idx - 1 prevents an unnecessary extra pass
+
+    B. This condition makes the algorithm more efficient. After every pass (i), the largest element of the unsorted portion "bubbles up" to its final position at the end of the array. Therefore, we don't need to check the last i elements again.
+    The - 1 is also crucial to avoid an ArrayIndexOutOfBoundsException when the code compares data[j] with data[j + 1].
+
+    C. - The loop runs from i = 0 to i < 50 - 1 (which is i < 49). This means the loop will execute 49 times.
+       - There will be 49 stages (passes) performed to fully sort the list.
+
+2. 
+
+import java.util.Scanner;
+
+public void inputStudentData(Student[] listStudents, int idx) {
+    Scanner sc = new Scanner(System.in);
+    
+    for (int i = 0; i < idx; i++) {
+        System.out.println("Enter data for student " + (i + 1));
+        
+        System.out.print("NIM         : ");
+        int nim = sc.nextInt();
+        sc.nextLine(); 
+        
+        System.out.print("Name        : ");
+        String name = sc.nextLine();
+        
+        System.out.print("Class       : ");
+        String studentClass = sc.nextLine();
+        
+        System.out.print("GPA (IPK)   : ");
+        double gpa = sc.nextDouble();
+        
+        listStudents[i] = new Student(nim, name, studentClass, gpa);
+        System.out.println("-------------------------");
+    }
+}
+
+*Question 6.3.9*
+
+1. In the full Selection Sort algorithm, once this for loop finishes, minIndex will hold the location of the absolute minimum value in the unsorted range.
+Only after this loop ends would the algorithm perform a single swap to move that minimum element to its correct sorted position at index i.
+
+*Qusetion 6.3.13*
+
+1.         
+
+        TopStudents11 ts3 = new TopStudents11();
+        ts3.add(new Student11("123", "Alice", "A", 3.5));
+        ts3.add(new Student11("124", "Bob", "B", 3.8));
+        ts3.add(new Student11("125", "Charlie", "A", 3.2));
+        ts3.add(new Student11("126", "David", "C", 3.9));
+        ts3.add(new Student11("127", "Eve", "B", 3.6));
+        
+        System.out.println("\n=== Insertion Sort (Ascending) ===");
+        ts3.insertionSort();
+        ts3.print();
+ 

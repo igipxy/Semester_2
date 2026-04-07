@@ -1,6 +1,6 @@
 public class SortingMain11 {
     public static void main(String[] args) {
-        int[] a = {20, 10, 2, 7, 12};
+        int[] a = {34, 7, 23, 32, 5, 62};
         Sorting11 sorting1 = new Sorting11(a, a.length);
         System.out.println("Original array:");
         sorting1.print();

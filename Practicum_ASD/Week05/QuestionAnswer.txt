@@ -1,0 +1,20 @@
+Question 6.2.5
+
+1. The provided code snippet is a swap mechanism typically used in sorting algorithms (like Bubble Sort).
+
+2. In Selection Sort, the goal is to find the smallest element in the unsorted part of the array and move it to the front.
+
+int minIndex = i; // Assume the first element of the unsorted part is the minimum
+for (int j = i + 1; j < n; j++) {
+    if (data[j] < data[minIndex]) {
+        minIndex = j; // Update minIndex if a smaller value is found
+    }
+}
+
+3. The condition while (j >= 0 && data[j] > key) is for
+
+    1. j >= 0 (Boundary Check): This prevents an ArrayIndexOutOfBoundsException. It ensures the loop stops once it has compared 
+    the key against all elements to the left (reaching the start of the array).
+
+    2. data[j] > key (Comparison): This determines if the current element is larger than the "key" being inserted. 
+    If it is, the loop continues so that the larger element can be shifted to the right, making space for the key to eventually be placed in its correct sorted position.

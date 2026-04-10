@@ -4,19 +4,6 @@ Welcome to my central repository for **Semester 2**. This space serves as a prof
 
 ---
 
-## 📂 Curriculum Overview
-This semester focused on the transition from fundamental concepts to **advanced system design** and **interdisciplinary problem-solving**.
-
-| Icon | Subject | Key Focus Areas | Repository Link |
-| :---: | :--- | :--- | :---: |
-| 💻 | **Programming II** | Object-Oriented Programming (OOP), Data Structures | [Link](./Programming) |
-| 🗄️ | **Database Systems** | SQL, Relational Modeling, Normalization | [Link](./Databases) |
-| 🌐 | **Web Development** | Full-stack basics, Responsive Design, APIs | [Link](./Web-Dev) |
-| 🔢 | **Discrete Math** | Logic, Set Theory, Graph Algorithms | [Link](./Math) |
-| 📡 | **Networking** | OSI Model, TCP/IP, Packet Switching | [Link](./Networking) |
-
----
-
 ## 🛠️ Global Technology Stack
 Throughout these subjects, I have utilized a diverse set of tools and languages to solve complex tasks:
 
@@ -40,7 +27,5 @@ To keep this repository organized, the following structure is used:
 ```bash
 .
 ├── 📁 Subject_Name/
-│   ├── 📁 Labs/          # Weekly practical exercises
-│   ├── 📁 Projects/      # Major course assignments
-│   └── 📁 Notes/         # Summaries and study materials
+│
 └── README.md             # This file

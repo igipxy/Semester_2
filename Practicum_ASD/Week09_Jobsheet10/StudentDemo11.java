@@ -33,14 +33,18 @@ public class StudentDemo11 {
                     System.out.println(name + "'s assignment has been successfully submitted!!");
                     break;
                     
-                case 2:  // GRADE - Pop operation
+                case 2:
                     Student11 graded = stack.pop();
                     if (graded != null) {
                         System.out.println("Grading assignment from " + graded.name);
                         System.out.print("Input grade (0-100): ");
                         int grade = scan.nextInt();
                         graded.grading(grade);
-                        System.out.println("Assignment grade of " + graded.name + " is " + grade);
+                        System.out.printf("Assignment grade of %s is %d\n", graded.name, grade);
+        
+                        // NEW: Convert to binary
+                        String binary = stack.convertToBinary(grade);
+                        System.out.printf("Assignment grade in binary is %s\n", binary);
                     }
                     break;
                     

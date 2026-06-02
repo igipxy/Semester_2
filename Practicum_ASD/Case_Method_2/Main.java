@@ -93,7 +93,39 @@ class QueueDLL {
         size--;
         return served;
     }
+
+    // Cancel a specific queue by queue number (admin input)
+    // Returns true if cancellation success, false if queue number not found
+    public boolean cancelQueue(int queueNumber) {
+        if (head == null) return false;
+
+        QueueNode current = head;
+        while (current != null && current.queueNumber != queueNumber) {
+            current = current.next;
+        }
+
+        if (current == null) return false; // not found
+
+        // Re-link neighbors
+        if (current.prev != null) {
+            current.prev.next = current.next;
+        } else {
+            // current is head
+            head = current.next;
+        }
+
+        if (current.next != null) {
+            current.next.prev = current.prev;
+        } else {
+            // current is tail
+            tail = current.prev;
+        }
+
+        size--;
+        return true;
+    }
 }
+
 
 // 6. ORDER DOUBLE LINKED LIST SYSTEM
 class OrderDLL {
@@ -170,6 +202,7 @@ public class Main {
             System.out.println("2. Print Queue");
             System.out.println("3. Remove Queue and Order");
             System.out.println("4. Order Report");
+            System.out.println("5. Cancel Queue");
             System.out.println("0. Exit");
             System.out.print("Choose menu : ");
             choice = sc.nextInt();
@@ -219,7 +252,20 @@ public class Main {
                 case 4:
                     orders.printOrderReport();
                     break;
-                    
+
+                case 5:
+                    System.out.print("Enter queue number to cancel: ");
+                    int cancelNumber = sc.nextInt();
+                    sc.nextLine();
+
+                    boolean canceled = queue.cancelQueue(cancelNumber);
+                    if (canceled) {
+                        System.out.println("Queue number " + cancelNumber + " has been canceled successfully.\n");
+                    } else {
+                        System.out.println("Queue number " + cancelNumber + " not found.\n");
+                    }
+                    break;
+
                 case 0:
                     System.out.println("Exiting system...");
                     break;

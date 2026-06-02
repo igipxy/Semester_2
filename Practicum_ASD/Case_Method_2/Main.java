@@ -46,11 +46,10 @@ class OrderNode {
     }
 }
 
-// 5. QUEUE DOUBLE LINKED LIST SYSTEM
 class QueueDLL {
     QueueNode head, tail;
     int size = 0;
-    int currentQueueNumber = 1; // Keeps track of the next queue number
+    int currentQueueNumber = 1;
 
     public void addQueue(Buyer b) {
         QueueNode newNode = new QueueNode(currentQueueNumber++, b);

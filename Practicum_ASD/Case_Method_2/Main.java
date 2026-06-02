@@ -78,7 +78,7 @@ class QueueDLL {
         System.out.println("Total Queue: " + size + "\n");
     }
 
-    // Removes and returns the first person in line
+
     public QueueNode dequeue() {
         if (head == null) {
             return null;
@@ -94,8 +94,7 @@ class QueueDLL {
         return served;
     }
 
-    // Cancel a specific queue by queue number (admin input)
-    // Returns true if cancellation success, false if queue number not found
+    
     public boolean cancelQueue(int queueNumber) {
         if (head == null) return false;
 
@@ -104,20 +103,17 @@ class QueueDLL {
             current = current.next;
         }
 
-        if (current == null) return false; // not found
+        if (current == null) return false; 
 
-        // Re-link neighbors
         if (current.prev != null) {
             current.prev.next = current.next;
         } else {
-            // current is head
             head = current.next;
         }
 
         if (current.next != null) {
             current.next.prev = current.prev;
         } else {
-            // current is tail
             tail = current.prev;
         }
 

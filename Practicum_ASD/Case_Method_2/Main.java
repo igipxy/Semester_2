@@ -1,6 +1,5 @@
 import java.util.Scanner;
 
-// 1. BUYER CLASS
 class Buyer {
     String name;
     String phoneNumber;
@@ -11,7 +10,6 @@ class Buyer {
     }
 }
 
-// 2. ORDER CLASS
 class Order {
     int orderCode;
     String orderName;
@@ -24,7 +22,6 @@ class Order {
     }
 }
 
-// 3. NODE FOR QUEUE (Double Linked List)
 class QueueNode {
     int queueNumber;
     Buyer buyer;
@@ -36,7 +33,6 @@ class QueueNode {
     }
 }
 
-// 4. NODE FOR ORDERS (Double Linked List)
 class OrderNode {
     Order order;
     OrderNode prev, next;
